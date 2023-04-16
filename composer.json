@@ -1,6 +1,16 @@
 {
     "name": "clsmedia/feature-flag",
     "description": "Set feature flag via .env or cookies",
+    "keywords": [
+		"feature-flag",
+		"feature-toggle",
+        "toggle",
+        "flag",
+        "php",
+        "feature"
+	],
+    "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Clsmedia\\FeatureFlag\\": "src/"
@@ -8,8 +18,9 @@
     },
     "authors": [
         {
-            "name": "CLS Media",
-            "email": "clsmedia@users.noreply.github.com"
+            "name": "Adam Skorupka",
+            "email": "adam.skorupka@gmail.com",
+            "role": "Developer"
         }
     ],
     "require-dev": {

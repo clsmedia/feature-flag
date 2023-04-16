@@ -1,0 +1,18 @@
+{
+    "name": "clsmedia/feature-flag",
+    "description": "Set feature flag via .env or cookies",
+    "autoload": {
+        "psr-4": {
+            "Clsmedia\\FeatureFlag\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CLS Media",
+            "email": "clsmedia@users.noreply.github.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.1"
+    }
+}

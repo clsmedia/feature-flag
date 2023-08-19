@@ -5,7 +5,7 @@ namespace Clsmedia\FeatureFlag\Helpers;
 
 class CreateArray
 {
-    public static function FromString(string $string): array
+    public static function fromString(string $string): array
     {
         $string = str_replace(' ','', $string);
         return explode(',', $string);

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Clsmedia\FeatureFlag;
@@ -12,28 +13,30 @@ class FeatureFlag
 {
     private array $flags = [];
 
-    public static function isActive(string $flag): bool
+    public function __construct()
     {
-        $featureFlag = new self;
-        $featureFlag->prepare();
-
-        return $featureFlag->exists($flag);
+        $this->prepare();
     }
 
-    private function exists(string $flag): bool
+    public static function isActive(string $flag): bool
+    {
+        return (new self)->has($flag);
+    }
+
+    public function has(string $flag): bool
     {
         return in_array($flag, $this->flags);
     }
 
     private function prepare(): void
     {
-        $this->addFlags(CreateArray::FromString(EnvFlags::get()));
-        $this->addFlags(CreateArray::FromString(CookieFlags::get()));
+        $this->addFlags(CreateArray::fromString(EnvFlags::get()));
+        $this->addFlags(CreateArray::fromString(CookieFlags::get()));
     }
 
     private function addFlags(array $flags): void
     {
-        $this->flags = array_merge($this->flags,$flags);
+        $this->flags = array_merge($this->flags, $flags);
         $this->flags = array_filter($this->flags);
     }
 

@@ -28,6 +28,11 @@ class FeatureFlag
         return in_array($flag, $this->flags);
     }
 
+    public function getFlags(): array
+    {
+        return $this->flags;
+    }
+
     private function prepare(): void
     {
         $this->addFlags(CreateArray::fromString(EnvFlags::get()));

@@ -28,6 +28,11 @@ class FeatureFlag
         return in_array($flag, $this->flags);
     }
 
+    public static function misses(string $flag): bool
+    {
+        return !(new self)->has($flag);
+    }
+
     public function getFlags(): array
     {
         return $this->flags;
